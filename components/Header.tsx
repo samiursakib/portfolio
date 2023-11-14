@@ -44,12 +44,12 @@ const Header = () => {
           </button>
         </div>
         <div className={`${isOverlayOpen ? 'h-screen delay-150' : 'h-0'} absolute w-full left-1/2 -translate-x-1/2 top-full bg-darker dark:bg-lighter text-lighter dark:text-darker transition-all overflow-hidden z-10`}>
-          <div className={`top-0 bottom-0 left-0 right-0 absolute`}>
+          <div className={`top-0 bottom-0 left-0 right-0`}>
             {navs.map((nav, id) => <Link
               key={id}
               href={`#${nav.toLowerCase()}`}
               onClick={() => setIsOverlayOpen(prev => !prev)}
-              className='px-6 py-4 border-t border-t-shadow dark:border-t-whitesmoke block text-center'
+              className='px-6 py-4 border-t border-t-shadow dark:border-t-whitesmoke block text-center hover:bg-shadow dark:hover:bg-whitesmoke transition-all duration-300'
             >
               {nav}
             </Link>)}
