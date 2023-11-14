@@ -36,7 +36,7 @@ const Header = () => {
           <span className={`${isOverlayOpen ? 'w-[28px] -rotate-45' : 'w-[22px] translate-y-2'} absolute h-[2px] bg-lighter dark:bg-darker block transition-all duration-300`}></span>
         </div>
         <div className='flex items-center p-1'>
-          <button className='text-2xl' onClick={() => {
+          <button className='text-2xl' onClick={( ) => {
             document.body.classList.toggle('dark');
             setDarkModeOn(prev => !prev);
           }}>
