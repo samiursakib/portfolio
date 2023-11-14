@@ -20,7 +20,7 @@ const About = () => {
         </div>
       </div>
       <p className="leading-7 text-sm col-span-2 text-justify font-extralight bg-whitesmoke dark:bg-shadow dark:text-lighter rounded-lg p-4">
-        I am a computer science graduate from CUET with a strong passion for web development. Currently, I&apos;m immersed in mastering Next.js, a powerful framework for building modern web applications.
+        A computer science graduate from CUET with a strong passion for web development. Currently, I&apos;m immersed in mastering Next.js, a powerful framework for building modern web applications.
         My goal is to create innovative, user-friendly solutions that have a positive impact on the digital world. Explore my portfolio to see my work and connect for potential collaborations in the exciting realm of web development.
       </p>
     </div>
