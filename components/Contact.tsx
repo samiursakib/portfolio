@@ -56,9 +56,9 @@ const Contact = () => {
     <div id='contact' className='p-8 text-darker dark:text-lighter'>
       <p className='text-4xl font-extrabold pt-4 pb-12 text-center'>Contact</p>
       <div className='grid grid-cols-1 sm:grid-cols-2 gap-8 place-items-center'>
-        <div className='gap-4'>
-          <div className='text-6xl font-bold'>Let's work together!</div>
-          <div className='flex space-x-2 mt-8 items-center'>
+        <div className='gap-4 text-center sm:text-left'>
+          <div className='text-6xl font-bold'>Let&apos;s work together!</div>
+          <div className='flex space-x-2 mt-8 items-center justify-center sm:justify-start'>
             { socialLinks.map((link, id) => <Link
               key={id}
               href={link.linkTo}

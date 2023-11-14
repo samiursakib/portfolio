@@ -6,7 +6,7 @@ const About = () => {
       <div className='grid grid-cols-1 sm:grid-cols-2 pt-12 pb-8 gap-8 place-items-center text-darker dark:text-lighter'>
         <div className='font-light text-center sm:text-left text-2xl space-y-2'>
           <p>Hey! Welcome to my portfolio.</p>
-          <p>I'm <span className='font-extrabold text-4xl'>Rafi Sakib</span>,</p>
+          <p>I&apos;m <span className='font-extrabold text-4xl'>Rafi Sakib</span>,</p>
           <p>a <span className='font-extrabold'>NextJS</span> Developer.</p>
         </div>
         <div className=''>
