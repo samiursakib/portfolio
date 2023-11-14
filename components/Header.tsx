@@ -8,7 +8,7 @@ import Link from 'next/link';
 const Header = () => {
   const navs = ['About', 'Skills', 'Projects', 'Contact'];
   const [isDarkModeOn, setDarkModeOn] = useState(false);
-  const [isOverlayOpen, setIsOverlayOpen] = useState(true);
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
   return (
     <div className="bg-lighter dark:bg-darker flex justify-center">
       <div className={`flex justify-between items-center bg-darker dark:bg-lighter text-lighter dark:text-darker px-4 py-3 relative transition-all ${isOverlayOpen ? 'w-full rounded-[0px]' : 'w-2/3 rounded-[9999px] delay-300'}`}>
@@ -44,7 +44,7 @@ const Header = () => {
           </button>
         </div>
         <div className={`${isOverlayOpen ? 'h-screen delay-150' : 'h-0'} absolute w-full left-1/2 -translate-x-1/2 top-full bg-darker dark:bg-lighter text-lighter dark:text-darker transition-all overflow-hidden z-10`}>
-          <div className={`h-full`}>
+          <div className={`top-0 bottom-0 left-0 right-0 absolute`}>
             {navs.map((nav, id) => <Link
               key={id}
               href={`#${nav.toLowerCase()}`}

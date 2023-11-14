@@ -29,10 +29,10 @@ const Projects = () => {
 
   return (
     <section id='projects' className="p-8 text-darker dark:text-lighter">
-      <p className='text-2xl font-extrabold pt-4 pb-12 text-center'>Projects</p>
+      <p className='text-4xl font-extrabold pt-4 pb-12 text-center'>Projects</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mx-16 sm:mx-0">
         { projects.map(p => <div key={p.id} className="relative rounded-xl overflow-hidden group shadow-lg dark:shadow-shadow">
-          <div className="bg-[#111] absolute top-0 bottom-0 left-0 right-0 opacity-0 group-hover:opacity-90 flex justify-center items-center transition-all duration-300">
+          <div className="bg-[#111] absolute top-0 bottom-0 left-0 right-0 opacity-0 group-hover:opacity-90 dark:group-hover:opacity-70 flex justify-center items-center transition-all duration-300">
             <div className="flex text-white gap-4 items-center justify-center">
               <Link href={p.liveDemoLink} className='w-10 h-10 p-2 border rounded-full flex justify-center items-center hover:bg-white hover:text-black transition-all duration-300'><MdLiveTv className='text-2xl'/></Link>
               <Link href={p.sourceLink} className='w-10 h-10 p-2 border rounded-full flex justify-center items-center hover:bg-white hover:text-black transition-all duration-300'><BiCodeAlt className='text-2xl' /></Link>
