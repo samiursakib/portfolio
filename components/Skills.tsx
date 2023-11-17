@@ -1,9 +1,33 @@
+'use client';
+
 import Image from "next/image";
 import { ReactNode } from "react";
 import Chart from '@/components/Chart';
+import { motion } from 'framer-motion';
 
 const Skills = () => {
-  
+  const techToolsVariants = {
+    initial: {
+      opacity: 0
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  }
+  const childVariants = {
+    initial: {
+      opacity: 0,
+      y: 20
+    },
+    animate: {
+      opacity: 1,
+      y: 0
+    }
+  }
+
   const techTools = ['Typescript', 'ReactJS', 'NextJS', 'Redux', 'Javascript', 'NodeJS', 'TailwindCSS', 'FramerMotion', 'Git', 'ExpressJS', 'SCSS', 'MongoDB', 'MySQL', 'HTML5', 'CSS3'];
 
   const SubHeader = ({ children }: { children: ReactNode }) => <p className='text-xl font-bold border-b border-whitesmoke dark:border-shadow pb-4'>{ children }</p>;
@@ -23,9 +47,8 @@ const Skills = () => {
         </div>
       </div>
       <SubHeader>Tech Tools</SubHeader>
-      <div className="flex gap-4 py-8 flex-wrap items-center">
-        { techTools.map((tool, id) => <div key={id} className='w-24 h-26 p-3
-         rounded-md bg-whitesmoke dark:bg-shadow flex flex-col items-center'>
+      <motion.div className="flex gap-4 py-8 flex-wrap items-center" variants={techToolsVariants} initial='initial' whileInView='animate'>
+        { techTools.map((tool, id) => <motion.div variants={childVariants} key={id} className='w-24 h-26 p-3 rounded-md bg-whitesmoke dark:bg-shadow flex flex-col items-center'>
           <Image
             src={`/icons/${tool.toLowerCase()}.svg`}
             alt={tool.toLowerCase()}
@@ -34,8 +57,8 @@ const Skills = () => {
             className='w-full h-auto'
           />
           <div className='text-xs pt-4'>{tool}</div>
-        </div> )}
-      </div>
+        </motion.div> )}
+      </motion.div>
     </div>
   );
 }

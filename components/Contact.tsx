@@ -4,6 +4,8 @@ import { FormEvent, ChangeEvent, useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Link from 'next/link';
 import Image from 'next/image';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 const initialFormData = {
   fromName: '',
@@ -38,6 +40,8 @@ const Contact = () => {
     }));
   }
 
+  const toastify = (message: string, success: boolean) => toast(message, { position: 'bottom-center', autoClose: 3000, bodyClassName: `text-center font-bold ${success ? 'text-[#00a945]' : 'text-[#dd0426]'}`, progressStyle: { background: `${success ? '#00a945' : '#dd0426'}`}});
+
   const onSubmit = (event: FormEvent) => {
     event.preventDefault();
     emailjs.sendForm(
@@ -46,10 +50,11 @@ const Contact = () => {
       formRef.current!,
       'yIRlzNWj8l6J4PMv2'
     ).then(result => {
+      toastify('Message sent successfully!', true);
       setFormData(initialFormData);
     }, error => {
-      throw new Error(error);
-    })
+      toastify('Sending message failed!', false);
+    });
   }
 
   return (
@@ -83,6 +88,7 @@ const Contact = () => {
         <form onSubmit={onSubmit} ref={formRef}
           className='w-full text-sm placeholder:text-sm'
         >
+          <p className='mb-2'>Send me an email for any queries.</p>
           <input
             type='text'
             placeholder='Your name'
@@ -90,6 +96,7 @@ const Contact = () => {
             value={formData.fromName}
             className='bg-white dark:bg-shadow my-2 w-full border border-whitesmoke dark:border-shadow px-6 py-3 outline-none focus:border-[#cacaca] dark:focus:border-[#2f2f2f] shadow-sm rounded-md transition-all duration-300'
             onChange={handleInputChange}
+            required
           />
           <input
             type='email'
@@ -98,6 +105,7 @@ const Contact = () => {
             value={formData.fromEmail}
             className='bg-white dark:bg-shadow my-2 w-full border border-whitesmoke dark:border-shadow px-6 py-3 outline-none focus:border-[#cacaca] dark:focus:border-[#2f2f2f] shadow-sm rounded-md transition-all duration-300'
             onChange={handleInputChange}
+            required
           />
           <input
             type='text'
@@ -106,6 +114,7 @@ const Contact = () => {
             value={formData.subject}
             className='bg-white dark:bg-shadow my-2 w-full border border-whitesmoke dark:border-shadow px-6 py-3 outline-none focus:border-[#cacaca] dark:focus:border-[#2f2f2f] shadow-sm rounded-md transition-all duration-300'
             onChange={handleInputChange}
+            required
           />
           <textarea
             placeholder='Message'
@@ -113,10 +122,12 @@ const Contact = () => {
             value={formData.message}
             className='bg-white dark:bg-shadow my-2 w-full border border-whitesmoke dark:border-shadow px-6 py-3 outline-none focus:border-[#cacaca] dark:focus:border-[#2f2f2f] shadow-sm rounded-md transition-all duration-300'
             onChange={handleInputChange}
+            required
           ></textarea>
           <button type='submit' className='bg-[#129cce] hover:bg-[#06B4F1] px-6 py-3 text-white rounded-md text-xs mt-2 w-full outline-none border border-[#06B4F1] focus:border-[#06698d] transition-all duration-300 hover:'>Send</button>
         </form>
       </div>
+      <ToastContainer closeButton={false} />
     </div>
   );
 }
