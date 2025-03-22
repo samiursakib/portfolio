@@ -1,10 +1,11 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import Image from "next/image";
 import Link from 'next/link';
-import { MdLiveTv } from 'react-icons/md';
 import { BiCodeAlt } from 'react-icons/bi';
-import { motion } from 'framer-motion';
+import { MdLiveTv } from 'react-icons/md';
+import Container from "./Container";
 
 const Projects = () => {
 
@@ -52,7 +53,7 @@ const Projects = () => {
     }
   }
   return (
-    <section id='projects' className="p-8 text-darker dark:text-lighter">
+    <Container><section id='projects' className="p-8 text-darker dark:text-lighter">
       <p className='text-4xl font-extrabold pt-4 pb-12 text-center'>Projects</p>
       <motion.div variants={projectsVariants} initial='initial' whileInView='animate' className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         { projects.map(p => <motion.div variants={childVariants} key={p.id} className="relative rounded-xl overflow-hidden group shadow-lg dark:shadow-shadow">
@@ -71,7 +72,7 @@ const Projects = () => {
           />
         </motion.div> )}
       </motion.div>
-    </section>
+    </section></Container>
   );
 }
 

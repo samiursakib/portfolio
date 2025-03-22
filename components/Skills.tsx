@@ -1,9 +1,10 @@
 'use client';
 
-import Image from "next/image";
-import { ReactNode } from "react";
 import Chart from '@/components/Chart';
 import { motion } from 'framer-motion';
+import Image from "next/image";
+import { ReactNode } from "react";
+import Container from "./Container";
 
 const Skills = () => {
   const techToolsVariants = {
@@ -33,7 +34,7 @@ const Skills = () => {
   const SubHeader = ({ children }: { children: ReactNode }) => <p className='text-xl font-bold border-b border-whitesmoke dark:border-shadow pb-4'>{ children }</p>;
 
   return (
-    <div id='skills' className="p-8 text-darker dark:text-lighter">
+    <Container><div id='skills' className="p-8 text-darker dark:text-lighter">
       <p className='text-4xl font-extrabold pt-4 pb-12 text-center'>Skills</p>
       <SubHeader>Programming Languages</SubHeader>
       <div className="flex justify-center py-8">
@@ -59,7 +60,7 @@ const Skills = () => {
           <div className='text-xs pt-4'>{tool}</div>
         </motion.div> )}
       </motion.div>
-    </div>
+    </div></Container>
   );
 }
 

@@ -1,11 +1,12 @@
 'use client';
 
-import { FormEvent, ChangeEvent, useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import Link from 'next/link';
 import Image from 'next/image';
-import 'react-toastify/dist/ReactToastify.css';
+import Link from 'next/link';
+import { ChangeEvent, FormEvent, useRef, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Container from './Container';
 
 const initialFormData = {
   fromName: '',
@@ -58,7 +59,7 @@ const Contact = () => {
   }
 
   return (
-    <div id='contact' className='p-8 text-darker dark:text-lighter'>
+    <Container><div id='contact' className='p-8 text-darker dark:text-lighter'>
       <p className='text-4xl font-extrabold pt-4 pb-12 text-center'>Contact</p>
       <div className='grid grid-cols-1 sm:grid-cols-2 gap-8 place-items-center'>
         <div className='gap-4 text-center sm:text-left'>
@@ -128,7 +129,7 @@ const Contact = () => {
         </form>
       </div>
       <ToastContainer closeButton={false} />
-    </div>
+    </div></Container>
   );
 }
 
