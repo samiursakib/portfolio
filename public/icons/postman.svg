@@ -1,0 +1,11 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pmg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6C37"/>
+      <stop offset="100%" stop-color="#E0502A"/>
+    </linearGradient>
+  </defs>
+  <rect width="24" height="24" rx="5" fill="url(#pmg)"/>
+  <!-- P letter -->
+  <path fill="white" d="M7 18V6h5.5C14.7 6 16 7.3 16 9.5S14.7 13 12.5 13H9.5v5H7zm2.5-7.5h2.5c1 0 1.5-.5 1.5-1.5s-.5-1.5-1.5-1.5H9.5v3z"/>
+</svg>

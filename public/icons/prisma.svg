@@ -1,0 +1,14 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="prg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0C344B"/>
+      <stop offset="100%" stop-color="#16A394"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer prism triangle -->
+  <path fill="url(#prg)" d="M3 21L12 2l9 19H3z"/>
+  <!-- Inner highlight line (the Prisma mark has an inner vertical line) -->
+  <line x1="12" y1="5" x2="12" y2="18" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+  <!-- Left face highlight -->
+  <path fill="rgba(255,255,255,0.12)" d="M12 2L3 21l5.5 0L12 5z"/>
+</svg>

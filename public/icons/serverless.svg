@@ -1,0 +1,13 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="slg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9900"/>
+      <stop offset="100%" stop-color="#E07B00"/>
+    </linearGradient>
+  </defs>
+  <!-- Cloud shape -->
+  <path fill="url(#slg)" d="M18.5 11.5a4.5 4.5 0 0 0-8.9-1 3.5 3.5 0 0 0-4.1 3.5A3.5 3.5 0 0 0 9 17.5h9a3.5 3.5 0 0 0 .5-6z"/>
+  <!-- Lambda symbol -->
+  <path fill="white" stroke="none" d="M9 19.5L12 14l1.5 2.5L16 19.5h-2l-1.5-2-1.5 2z"/>
+  <path fill="white" d="M10.5 14h2l-1 1.5z"/>
+</svg>

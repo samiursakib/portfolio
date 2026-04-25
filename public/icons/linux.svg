@@ -1,0 +1,24 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lxg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A1A1A"/>
+      <stop offset="100%" stop-color="#333"/>
+    </linearGradient>
+  </defs>
+  <!-- Body -->
+  <ellipse cx="12" cy="15" rx="7" ry="7" fill="url(#lxg)"/>
+  <!-- Head -->
+  <circle cx="12" cy="7" r="5" fill="url(#lxg)"/>
+  <!-- Belly (white) -->
+  <ellipse cx="12" cy="15" rx="4.5" ry="5" fill="#FCC624"/>
+  <!-- Eyes -->
+  <circle cx="10" cy="6" r="1.2" fill="#FCC624"/>
+  <circle cx="14" cy="6" r="1.2" fill="#FCC624"/>
+  <circle cx="10.4" cy="6" r="0.6" fill="#1A1A1A"/>
+  <circle cx="14.4" cy="6" r="0.6" fill="#1A1A1A"/>
+  <!-- Beak -->
+  <polygon points="11,8.5 13,8.5 12,10" fill="#FCC624"/>
+  <!-- Feet -->
+  <ellipse cx="9.5" cy="21.5" rx="2.5" ry="1" fill="#FCC624"/>
+  <ellipse cx="14.5" cy="21.5" rx="2.5" ry="1" fill="#FCC624"/>
+</svg>

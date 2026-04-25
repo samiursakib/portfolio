@@ -1,0 +1,13 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="edg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#E844B6"/>
+    </linearGradient>
+  </defs>
+  <!-- Circular event loop -->
+  <path fill="none" stroke="url(#edg)" stroke-width="1.8" stroke-linecap="round" d="M20 12a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8"/>
+  <polygon points="12,3.5 15,5.5 12,7.5" fill="url(#edg)"/>
+  <!-- Lightning bolt -->
+  <path fill="url(#edg)" d="M13.5 10L10 14.5h3.5L10.5 20l7-8h-4z"/>
+</svg>

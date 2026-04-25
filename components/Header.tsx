@@ -1,87 +1,137 @@
 "use client";
-import Image from "next/image";
+
+import Logo from "@/components/Logo";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsFillSunFill } from "react-icons/bs";
 import { PiMoonStarsFill } from "react-icons/pi";
 
+const navs = ["About", "Experience", "Skills", "Projects", "Contact"];
+
 const Header = () => {
-  const navs = ["About", "Skills", "Projects", "Contact"];
-  const [isDarkModeOn, setDarkModeOn] = useState(false);
+  const [isDarkModeOn, setDarkModeOn] = useState(true);
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("about");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navs.map((n) => n.toLowerCase());
+      let current = "about";
+      for (const id of sections) {
+        const el = document.getElementById(id);
+        if (el && window.scrollY >= el.offsetTop - 120) current = id;
+      }
+      setActiveSection(current);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const saved = localStorage.getItem('theme');
+    const dark = saved !== 'light';
+    setDarkModeOn(dark);
+    document.body.classList.toggle('dark', dark);
+  }, []);
+
+  const toggleDark = () => {
+    const next = !isDarkModeOn;
+    setDarkModeOn(next);
+    document.body.classList.toggle('dark', next);
+    localStorage.setItem('theme', next ? 'dark' : 'light');
+  };
+
   return (
-    <div className="bg-lighter dark:bg-darker flex justify-center">
-      <div
-        className={`flex justify-between items-center bg-darker dark:bg-lighter text-lighter dark:text-darker px-4 py-3 relative transition-all ${
-          isOverlayOpen
-            ? "w-full rounded-[0px]"
-            : "w-2/3 rounded-[9999px] delay-300"
-        }`}
-      >
-        <div>
-          <Link href={"/"}>
-            <Image src="/logo.png" width={30} height={30} alt="logo" />
+    <header className="fixed top-0 left-0 right-0 z-50 pt-4 pb-3 bg-lighter/60 dark:bg-darker/60 backdrop-blur-md">
+      <div className="max-w-6xl mx-auto px-6">
+
+        {/* Pill */}
+        <div className="flex items-center py-2">
+
+          {/* Logo */}
+          <Link href="/" aria-label="Home" className="flex-shrink-0">
+            <Logo animated id="nav" className="h-8 w-auto" />
           </Link>
-        </div>
-        <div className="hidden sm:flex flex-row space-x-3 font-light text-sm">
-          {navs.map((nav, id) => (
-            <Link className="group" key={id} href={`#${nav.toLowerCase()}`}>
-              {nav}
-              <span className="mx-auto transition-all duration-300 block h-[2px] w-0 dark:bg-darker bg-lighter group-hover:w-full"></span>
-            </Link>
-          ))}
-        </div>
-        <div
-          className="flex sm:hidden relative justify-center items-center p-4 hover:cursor-pointer h-0"
-          onClick={() => setIsOverlayOpen((prev) => !prev)}
-        >
-          <span
-            className={`${
-              isOverlayOpen ? "w-[28px] rotate-45" : "w-[22px] -translate-y-2"
-            } absolute h-[2px] bg-lighter dark:bg-darker block transition-all duration-300`}
-          ></span>
-          <span
-            className={`${
-              isOverlayOpen ? "opacity-0" : "opacity-100"
-            } absolute w-[22px] h-[2px] bg-lighter dark:bg-darker block transition-all duration-300`}
-          ></span>
-          <span
-            className={`${
-              isOverlayOpen ? "w-[28px] -rotate-45" : "w-[22px] translate-y-2"
-            } absolute h-[2px] bg-lighter dark:bg-darker block transition-all duration-300`}
-          ></span>
-        </div>
-        <div className="flex items-center p-1">
-          <button
-            className="text-2xl"
-            onClick={() => {
-              document.body.classList.toggle("dark");
-              setDarkModeOn((prev) => !prev);
-            }}
-          >
-            {isDarkModeOn ? <PiMoonStarsFill /> : <BsFillSunFill />}
-          </button>
-        </div>
-        <div
-          className={`${
-            isOverlayOpen ? "h-screen delay-150" : "h-0"
-          } absolute w-full left-1/2 -translate-x-1/2 top-full bg-darker dark:bg-lighter text-lighter dark:text-darker transition-all overflow-hidden z-10`}
-        >
-          <div className={`top-0 bottom-0 left-0 right-0`}>
-            {navs.map((nav, id) => (
-              <Link
-                key={id}
-                href={`#${nav.toLowerCase()}`}
-                onClick={() => setIsOverlayOpen((prev) => !prev)}
-                className="px-6 py-4 border-t border-t-shadow dark:border-t-whitesmoke block text-center hover:bg-shadow dark:hover:bg-whitesmoke transition-all duration-300"
-              >
-                {nav}
-              </Link>
-            ))}
+
+          {/* Desktop nav — centered */}
+          <nav className="hidden sm:flex flex-1 justify-center items-center gap-7">
+            {navs.map((nav) => {
+              const isActive = activeSection === nav.toLowerCase();
+              return (
+                <Link
+                  key={nav}
+                  href={`#${nav.toLowerCase()}`}
+                  className={`relative text-sm font-light transition-colors duration-300 group ${
+                    isActive
+                      ? "text-[#06B4F1]"
+                      : "text-jet/70 dark:text-platinum/80 hover:text-[#06B4F1] dark:hover:text-[#06B4F1]"
+                  }`}
+                >
+                  {nav}
+                  <span
+                    className={`absolute -bottom-1 left-0 h-[2px] rounded-full bg-gradient-to-r from-[#7C3AED] to-[#06B4F1] transition-all duration-300 ${
+                      isActive ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  />
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Right controls — always visible */}
+          <div className="flex items-center gap-1 ml-auto sm:ml-0">
+
+            {/* Dark mode toggle */}
+            <button
+              onClick={toggleDark}
+              className="w-8 h-8 flex items-center justify-center rounded-full text-jet/70 dark:text-platinum hover:text-[#06B4F1] dark:hover:text-[#06B4F1] transition-colors duration-300 text-base"
+              aria-label="Toggle dark mode"
+            >
+              {isDarkModeOn ? <PiMoonStarsFill /> : <BsFillSunFill />}
+            </button>
+
+            {/* Mobile hamburger */}
+            <button
+              className="flex sm:hidden relative justify-center items-center w-8 h-8"
+              onClick={() => setIsOverlayOpen((prev) => !prev)}
+              aria-label="Toggle menu"
+            >
+              <span className={`absolute h-[1.5px] bg-darker dark:bg-lighter rounded-full block transition-all duration-300 ${isOverlayOpen ? "w-5 rotate-45" : "w-4 -translate-y-[5px]"}`} />
+              <span className={`absolute h-[1.5px] bg-darker dark:bg-lighter rounded-full block transition-all duration-300 ${isOverlayOpen ? "opacity-0 w-5" : "opacity-100 w-5"}`} />
+              <span className={`absolute h-[1.5px] bg-darker dark:bg-lighter rounded-full block transition-all duration-300 ${isOverlayOpen ? "w-5 -rotate-45" : "w-4 translate-y-[5px]"}`} />
+            </button>
           </div>
         </div>
+
+        {/* Mobile dropdown */}
+        <div
+          className={`sm:hidden overflow-hidden transition-all duration-300 ease-in-out mt-2 rounded-2xl ${
+            isOverlayOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
+          } `}
+        >
+          <nav className="flex flex-col px-4 py-3 gap-1">
+            {navs.map((nav) => {
+              const isActive = activeSection === nav.toLowerCase();
+              return (
+                <Link
+                  key={nav}
+                  href={`#${nav.toLowerCase()}`}
+                  onClick={() => setIsOverlayOpen(false)}
+                  className={`px-4 py-3 rounded-xl text-sm font-light transition-all duration-200 ${
+                    isActive
+                      ? "text-[#06B4F1] bg-[#06B4F1]/10"
+                      : "text-jet/70 dark:text-platinum/80 hover:text-[#06B4F1] hover:bg-[#06B4F1]/5"
+                  }`}
+                >
+                  {nav}
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
+
       </div>
-    </div>
+    </header>
   );
 };
 

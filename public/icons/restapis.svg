@@ -1,0 +1,15 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="rag" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+  <rect width="24" height="24" rx="5" fill="url(#rag)"/>
+  <!-- Right arrow (request) -->
+  <path fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" d="M4 9h13"/>
+  <polyline fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" points="14,6 17,9 14,12"/>
+  <!-- Left arrow (response) -->
+  <path fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" d="M20 15H7"/>
+  <polyline fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" points="10,12 7,15 10,18"/>
+</svg>
