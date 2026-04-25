@@ -1,0 +1,18 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="msg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D9488"/>
+      <stop offset="100%" stop-color="#06B4F1"/>
+    </linearGradient>
+  </defs>
+  <!-- Connecting lines -->
+  <line x1="5.5" y1="8" x2="12" y2="12" stroke="url(#msg)" stroke-width="1.2"/>
+  <line x1="18.5" y1="8" x2="12" y2="12" stroke="url(#msg)" stroke-width="1.2"/>
+  <line x1="12" y1="12" x2="12" y2="19" stroke="url(#msg)" stroke-width="1.2"/>
+  <!-- Top-left hexagon -->
+  <polygon points="5.5,4 8,5.5 8,8.5 5.5,10 3,8.5 3,5.5" fill="url(#msg)"/>
+  <!-- Top-right hexagon -->
+  <polygon points="18.5,4 21,5.5 21,8.5 18.5,10 16,8.5 16,5.5" fill="url(#msg)"/>
+  <!-- Bottom center hexagon -->
+  <polygon points="12,15 14.5,16.5 14.5,19.5 12,21 9.5,19.5 9.5,16.5" fill="url(#msg)"/>
+</svg>

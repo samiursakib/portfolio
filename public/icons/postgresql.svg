@@ -1,0 +1,20 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pgg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#336791"/>
+      <stop offset="100%" stop-color="#2F5E8A"/>
+    </linearGradient>
+  </defs>
+  <!-- Simplified elephant head -->
+  <circle cx="12" cy="10" r="8" fill="url(#pgg)"/>
+  <circle cx="12" cy="10" r="8" fill="none" stroke="#4A8CB0" stroke-width="1"/>
+  <!-- Ear -->
+  <ellipse cx="5" cy="8" rx="2.5" ry="3.5" fill="#4A8CB0"/>
+  <!-- Trunk -->
+  <path fill="#4A8CB0" stroke="none" d="M10 16 Q8 19 10 21 Q12 22 12 19 Q12 17 14 16z"/>
+  <!-- Eye -->
+  <circle cx="14" cy="9" r="1" fill="white"/>
+  <circle cx="14.3" cy="9" r="0.5" fill="#336791"/>
+  <!-- Tusk -->
+  <path fill="none" stroke="#A0C4D8" stroke-width="1.2" stroke-linecap="round" d="M11 16 Q9 18 8.5 20"/>
+</svg>

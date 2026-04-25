@@ -1,0 +1,15 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="rmg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121212"/>
+      <stop offset="100%" stop-color="#2A2A2A"/>
+    </linearGradient>
+    <linearGradient id="rmt" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E844B6"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+  <rect width="24" height="24" rx="5" fill="url(#rmg)"/>
+  <!-- Stylized R -->
+  <path fill="url(#rmt)" d="M6 18V6h7.5c2.5 0 4 1.5 4 3.5 0 1.5-.9 2.7-2.2 3.2L18 18h-3l-2.4-5H9v5H6zm3-7.5h3.5c1.1 0 1.8-.6 1.8-1.5s-.7-1.5-1.8-1.5H9v3z"/>
+</svg>

@@ -1,1 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" id="framer"><polygon points="4 16 12 24 12 16 20 16 12 8 4 8"></polygon><polygon points="20 0 4 0 12 8 20 8"></polygon></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="framer">
+  <defs>
+    <linearGradient id="fm" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#E844B6"/>
+    </linearGradient>
+  </defs>
+  <polygon points="4 16 12 24 12 16 20 16 12 8 4 8" fill="url(#fm)"/>
+  <polygon points="20 0 4 0 12 8 20 8" fill="url(#fm)" opacity="0.75"/>
+</svg>

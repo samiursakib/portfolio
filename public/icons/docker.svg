@@ -1,0 +1,20 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dkg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2496ED"/>
+      <stop offset="100%" stop-color="#1A6CA8"/>
+    </linearGradient>
+  </defs>
+  <!-- Whale body -->
+  <ellipse cx="11" cy="14" rx="8" ry="5" fill="url(#dkg)"/>
+  <!-- Whale tail -->
+  <path fill="url(#dkg)" d="M18 14 Q22 12 22 15 Q22 18 18 17z"/>
+  <!-- Containers on whale -->
+  <rect x="5" y="9" width="3" height="3" rx="0.5" fill="white" opacity="0.9"/>
+  <rect x="9" y="9" width="3" height="3" rx="0.5" fill="white" opacity="0.9"/>
+  <rect x="13" y="9" width="3" height="3" rx="0.5" fill="white" opacity="0.9"/>
+  <!-- Water spray line -->
+  <path fill="none" stroke="#2496ED" stroke-width="1" d="M6 14 Q3 12 2 13"/>
+  <!-- Eye -->
+  <circle cx="7" cy="14" r="0.8" fill="white"/>
+</svg>
